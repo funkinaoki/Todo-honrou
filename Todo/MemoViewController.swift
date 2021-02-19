@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoViewController: UIViewController {
+class MemoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var textView: UITextField!
     
@@ -19,6 +19,8 @@ class MemoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
         
     }
     
@@ -52,6 +54,11 @@ class MemoViewController: UIViewController {
         addDate = formatter.string(from: sender.date)
     }
     
+    //キーボード
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
     
     
     

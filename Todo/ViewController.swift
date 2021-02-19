@@ -66,12 +66,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             dateArray.append(addDate)
             userDefaults.setValue(dateArray, forKey: "dateArray")
+            
+            
         }
         
         //もし編集画面から戻ってきたら指定の配列の情報を変更し、保存
         if editMemo != nil {
             memoArray[editArrayNumber] = editMemo
-            userDefaults.set(memoArray, forKey: "memoArray")
+            userDefaults.setValue(memoArray, forKey: "memoArray")
+            print(editMemo!)
             
             dateArray[editArrayNumber] = editDate
             userDefaults.setValue(dateArray, forKey: "dateArray")
@@ -80,6 +83,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         currentMemoArray = memoArray
         currentDateArray = dateArray
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if addContext != nil {
+            let alert: UIAlertController = UIAlertController(title:"保存されました", message: "今後もよろしくお願いします", preferredStyle: .alert)
+            alert.addAction(
+                    UIAlertAction(
+                        title: "OK",
+                        style: .default,
+                        handler: { action in
+                            //押された際のアクション
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    )
+            )
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //数を返す

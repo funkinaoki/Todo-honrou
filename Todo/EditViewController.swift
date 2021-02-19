@@ -7,9 +7,9 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var textView: UITextField!
     
     var editMemo: String!
     
@@ -22,6 +22,8 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
         
         textView.text = editMemo
         print(editMemo!)
@@ -37,6 +39,7 @@ class EditViewController: UIViewController {
     
 
     @IBAction func save(_ sender: Any) {
+        editMemo = textView.text
         toMain()
     }
     
@@ -76,6 +79,12 @@ class EditViewController: UIViewController {
             return formatter.string(from: date)
         }
 
+    }
+    
+    //キーボード
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textView.resignFirstResponder()
+        return true
     }
     
 
