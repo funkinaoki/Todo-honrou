@@ -29,6 +29,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var addDate: String!
     
+    var editMemo: String!
+    
+    var editDate: String!
+    
+    var indexPath: Int!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +68,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             userDefaults.setValue(dateArray, forKey: "dateArray")
         }
         
+        //もし編集画面から戻ってきたら指定の配列の情報を変更し、保存
+        if editMemo != nil {
+            memoArray[indexPath] = editMemo
+            userDefaults.set(memoArray, forKey: "memoArray")
+            
+            dateArray[indexPath] = editDate
+            userDefaults.setValue(dateArray, forKey: "dateArray")
+        }
+        
         currentMemoArray = memoArray
         currentDateArray = dateArray
         
@@ -81,8 +96,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell!
     }
-    
-    
     
     //editingstyleおよびスワイプにおける削除機能の追加
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -107,7 +120,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         memoArray.insert(todo, at: destinationIndexPath.row)
     }
     
-    
     //edit機能で削除できないようにする
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
@@ -123,8 +135,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //action1
         let action = UIContextualAction(style: .normal, title: "編集") { (ctxAction, view, completionHandler) in
-            print("赤サタな")
+            print(self.currentMemoArray[indexPath.row])
+            self.editMemo = self.currentMemoArray[indexPath.row]
+            self.editDate = self.currentDateArray[indexPath.row]
+            self.indexPath = indexPath.row
+            self.toEdit()
             completionHandler(true)
+            
         }
         
         //action2
@@ -201,6 +218,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //検索する
         searchItems(searchText: searchText)
+    }
+    
+    func toEdit() {
+        performSegue(withIdentifier: "toEditView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditView" {
+            let EditViewController = segue.destination as! EditViewController
+            EditViewController.editMemo = self.editMemo
+            EditViewController.editDate = self.editDate
+            EditViewController.indexPath = self.indexPath
+            
+        }
     }
 
 

@@ -47,15 +47,15 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-w4-3c4">
-                                <rect key="frame" x="356" y="52" width="30" height="66"/>
+                                <rect key="frame" x="364" y="52" width="30" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="+"/>
-                                <connections>
-                                    <segue destination="Gas-Uq-pah" kind="presentation" modalPresentationStyle="fullScreen" id="4h0-IS-9Al"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cri-zV-EH2">
-                                <rect key="frame" x="28" y="52" width="40" height="66"/>
+                                <rect key="frame" x="20" y="52" width="55" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="WqM-4L-hix"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Sort"/>
                                 <connections>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-QD-Rbi">
-                                <rect key="frame" x="78" y="59" width="268" height="56"/>
+                                <rect key="frame" x="85" y="59" width="269" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -76,9 +76,9 @@
                             <constraint firstItem="79a-e6-yl8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lm4-6E-ZYc"/>
                             <constraint firstItem="BLq-w4-3c4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="NMw-pS-lce"/>
                             <constraint firstItem="79a-e6-yl8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OSS-eA-cjs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BLq-w4-3c4" secondAttribute="trailing" constant="8" id="Yal-QI-2we"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BLq-w4-3c4" secondAttribute="trailing" id="Yal-QI-2we"/>
                             <constraint firstItem="a5n-QD-Rbi" firstAttribute="leading" secondItem="cri-zV-EH2" secondAttribute="trailing" constant="10" id="Zwo-JB-o87"/>
-                            <constraint firstItem="cri-zV-EH2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="atg-WX-g2c"/>
+                            <constraint firstItem="cri-zV-EH2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="atg-WX-g2c"/>
                             <constraint firstItem="cri-zV-EH2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bYl-yM-wXd"/>
                             <constraint firstItem="BLq-w4-3c4" firstAttribute="leading" secondItem="a5n-QD-Rbi" secondAttribute="trailing" constant="10" id="jaH-wo-1eh"/>
                             <constraint firstItem="79a-e6-yl8" firstAttribute="top" secondItem="a5n-QD-Rbi" secondAttribute="bottom" constant="3" id="kg1-c4-iav"/>
@@ -89,6 +89,8 @@
                         <outlet property="editButton" destination="cri-zV-EH2" id="GXf-43-EgL"/>
                         <outlet property="search" destination="a5n-QD-Rbi" id="Gai-36-1k6"/>
                         <outlet property="table" destination="79a-e6-yl8" id="Evh-7x-Lr5"/>
+                        <segue destination="Gas-Uq-pah" kind="presentation" modalPresentationStyle="fullScreen" id="2WY-t0-NNd"/>
+                        <segue destination="14s-V5-bUU" kind="presentation" identifier="toEditView" modalPresentationStyle="fullScreen" id="e0T-fq-UaM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,9 +144,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yB-Df-5gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="78"/>
+            <point key="canvasLocation" x="1674" y="-254"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="ZHO-fy-nZd">
+            <objects>
+                <viewController id="14s-V5-bUU" customClass="EditViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dva-Qk-qIb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erf-BU-vgH">
+                                <rect key="frame" x="69" y="296" width="276" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-lq-l0Y">
+                                <rect key="frame" x="191.5" y="581" width="31" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="save:" destination="14s-V5-bUU" eventType="touchUpInside" id="Vsr-Gk-30h"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-jw-bsz">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <connections>
+                                    <action selector="changeDate:" destination="14s-V5-bUU" eventType="valueChanged" id="vg2-WQ-j6l"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XOc-2c-s3r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EBh-jw-bsz" firstAttribute="centerY" secondItem="dva-Qk-qIb" secondAttribute="centerY" id="8wE-fL-y6H"/>
+                            <constraint firstItem="erf-BU-vgH" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="LZ3-rB-ntL"/>
+                            <constraint firstItem="sUP-lq-l0Y" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="er6-60-yEP"/>
+                            <constraint firstAttribute="width" secondItem="erf-BU-vgH" secondAttribute="width" multiplier="1.5" id="ggm-cv-fvr"/>
+                            <constraint firstItem="EBh-jw-bsz" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="qoq-59-Q4n"/>
+                            <constraint firstItem="EBh-jw-bsz" firstAttribute="top" secondItem="erf-BU-vgH" secondAttribute="bottom" constant="10" id="xgH-5v-CIE"/>
+                            <constraint firstItem="sUP-lq-l0Y" firstAttribute="top" secondItem="EBh-jw-bsz" secondAttribute="bottom" constant="25" id="zg4-Iz-GAU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="x3J-PH-y0H"/>
+                    <connections>
+                        <outlet property="datePicker" destination="EBh-jw-bsz" id="pWM-bQ-uxk"/>
+                        <outlet property="textView" destination="erf-BU-vgH" id="O1I-uU-JzQ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="iMn-HB-ph2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHC-ly-9Mz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iMn-HB-ph2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
