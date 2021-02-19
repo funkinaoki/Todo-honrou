@@ -13,6 +13,7 @@
 		CC01936E25DE968A00CD164F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC01936C25DE968A00CD164F /* Main.storyboard */; };
 		CC01937025DE968C00CD164F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC01936F25DE968C00CD164F /* Assets.xcassets */; };
 		CC01937325DE968C00CD164F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC01937125DE968C00CD164F /* LaunchScreen.storyboard */; };
+		CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01937B25DE98F200CD164F /* MemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CC01936F25DE968C00CD164F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC01937225DE968C00CD164F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC01937425DE968C00CD164F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC01937B25DE98F200CD164F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CC01936F25DE968C00CD164F /* Assets.xcassets */,
 				CC01937125DE968C00CD164F /* LaunchScreen.storyboard */,
 				CC01937425DE968C00CD164F /* Info.plist */,
+				CC01937B25DE98F200CD164F /* MemoViewController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */,
 				CC01936B25DE968A00CD164F /* ViewController.swift in Sources */,
 				CC01936725DE968A00CD164F /* AppDelegate.swift in Sources */,
 				CC01936925DE968A00CD164F /* SceneDelegate.swift in Sources */,
