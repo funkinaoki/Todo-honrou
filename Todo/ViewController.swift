@@ -115,9 +115,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     //並び替え
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let todo = memoArray[sourceIndexPath.row]
-        memoArray.remove(at: sourceIndexPath.row)
-        memoArray.insert(todo, at: destinationIndexPath.row)
+        let todo = currentMemoArray[sourceIndexPath.row]
+        currentMemoArray.remove(at: sourceIndexPath.row)
+        currentMemoArray.insert(todo, at: destinationIndexPath.row)
+        
+        self.userDefaults.set(self.currentMemoArray, forKey: "memoArray")
+        self.userDefaults.set(self.currentDateArray, forKey: "dateArray")
     }
     
     //edit機能で削除できないようにする

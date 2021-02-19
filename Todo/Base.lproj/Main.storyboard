@@ -119,8 +119,9 @@
                                     <action selector="save" destination="Gas-Uq-pah" eventType="touchUpInside" id="SZX-9Y-35j"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-qU-L2b">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-qU-L2b">
                                 <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
                                 <connections>
                                     <action selector="changeDate:" destination="Gas-Uq-pah" eventType="valueChanged" id="WYN-59-RX5"/>
                                 </connections>
@@ -168,8 +169,9 @@
                                     <action selector="save:" destination="14s-V5-bUU" eventType="touchUpInside" id="Vsr-Gk-30h"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-jw-bsz">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-jw-bsz">
                                 <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
                                 <connections>
                                     <action selector="changeDate:" destination="14s-V5-bUU" eventType="valueChanged" id="vg2-WQ-j6l"/>
                                 </connections>
@@ -200,7 +202,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="o0T-jm-8KY"/>
+        <segue reference="iMn-HB-ph2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

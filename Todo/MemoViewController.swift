@@ -48,7 +48,7 @@ class MemoViewController: UIViewController {
     @IBAction func changeDate(_ sender: UIDatePicker) {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.dateFormat = "yyyy/MM/dd"
         addDate = formatter.string(from: sender.date)
     }
     

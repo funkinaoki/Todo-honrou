@@ -28,7 +28,7 @@ class EditViewController: UIViewController {
         
         //もし時間が設定されていたら時刻を表示する
         if editDate != ""{
-        let date = DateUtils.dateFromString(string: editDate, format: "yyyy/MM/dd HH:mm:ss")
+        let date = DateUtils.dateFromString(string: editDate, format: "yyyy/MM/dd")
         print(date)
         datePicker.date = date
         }
@@ -41,7 +41,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func changeDate(_ sender: UIDatePicker) {
-        editDate = DateUtils.stringFromDate(date: sender.date, format: "yyyy/MM/dd HH:mm:ss")
+        editDate = DateUtils.stringFromDate(date: sender.date, format: "yyyy/MM/dd")
     }
     
     func toMain() {
