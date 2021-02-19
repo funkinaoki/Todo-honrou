@@ -55,13 +55,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cri-zV-EH2">
-                                <rect key="frame" x="28" y="52" width="37" height="66"/>
+                                <rect key="frame" x="28" y="52" width="40" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Edit"/>
+                                <state key="normal" title="Sort"/>
                                 <connections>
                                     <action selector="tapEditWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ht-Sb-lNr"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-QD-Rbi">
+                                <rect key="frame" x="78" y="59" width="268" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,12 +77,17 @@
                             <constraint firstItem="BLq-w4-3c4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="NMw-pS-lce"/>
                             <constraint firstItem="79a-e6-yl8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OSS-eA-cjs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BLq-w4-3c4" secondAttribute="trailing" constant="8" id="Yal-QI-2we"/>
+                            <constraint firstItem="a5n-QD-Rbi" firstAttribute="leading" secondItem="cri-zV-EH2" secondAttribute="trailing" constant="10" id="Zwo-JB-o87"/>
                             <constraint firstItem="cri-zV-EH2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="atg-WX-g2c"/>
                             <constraint firstItem="cri-zV-EH2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bYl-yM-wXd"/>
+                            <constraint firstItem="BLq-w4-3c4" firstAttribute="leading" secondItem="a5n-QD-Rbi" secondAttribute="trailing" constant="10" id="jaH-wo-1eh"/>
+                            <constraint firstItem="79a-e6-yl8" firstAttribute="top" secondItem="a5n-QD-Rbi" secondAttribute="bottom" constant="3" id="kg1-c4-iav"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nZY-e5-tR4"/>
                     <connections>
+                        <outlet property="editButton" destination="cri-zV-EH2" id="GXf-43-EgL"/>
+                        <outlet property="search" destination="a5n-QD-Rbi" id="Gai-36-1k6"/>
                         <outlet property="table" destination="79a-e6-yl8" id="Evh-7x-Lr5"/>
                     </connections>
                 </viewController>
@@ -112,20 +121,12 @@
                                     <action selector="changeDate:" destination="Gas-Uq-pah" eventType="valueChanged" id="WYN-59-RX5"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng2-By-9R1">
-                                <rect key="frame" x="136" y="254" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ccT-ah-3Bk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kFB-aL-sWD" firstAttribute="top" secondItem="ev1-qU-L2b" secondAttribute="bottom" constant="25" id="0qV-XM-c8l"/>
-                            <constraint firstItem="0Uv-VU-Ubj" firstAttribute="top" secondItem="Ng2-By-9R1" secondAttribute="bottom" constant="21" id="ACE-bI-xdE"/>
                             <constraint firstItem="0Uv-VU-Ubj" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="Pe2-sa-gq5"/>
-                            <constraint firstItem="Ng2-By-9R1" firstAttribute="leading" secondItem="ccT-ah-3Bk" secondAttribute="leading" constant="136" id="QjZ-Np-2kc"/>
                             <constraint firstItem="kFB-aL-sWD" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="S6t-AD-Iut"/>
                             <constraint firstAttribute="width" secondItem="0Uv-VU-Ubj" secondAttribute="width" multiplier="1.5" id="Szg-ov-5Yn"/>
                             <constraint firstItem="ev1-qU-L2b" firstAttribute="centerY" secondItem="0AT-Z0-0S7" secondAttribute="centerY" id="Zkd-uM-EIe"/>
