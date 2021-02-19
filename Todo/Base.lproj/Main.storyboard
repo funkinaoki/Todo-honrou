@@ -50,6 +50,9 @@
                                 <rect key="frame" x="364" y="52" width="30" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="Gas-Uq-pah" kind="presentation" modalPresentationStyle="fullScreen" id="cfU-zH-t5n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cri-zV-EH2">
                                 <rect key="frame" x="20" y="52" width="55" height="66"/>
@@ -89,7 +92,6 @@
                         <outlet property="editButton" destination="cri-zV-EH2" id="GXf-43-EgL"/>
                         <outlet property="search" destination="a5n-QD-Rbi" id="Gai-36-1k6"/>
                         <outlet property="table" destination="79a-e6-yl8" id="Evh-7x-Lr5"/>
-                        <segue destination="Gas-Uq-pah" kind="presentation" modalPresentationStyle="fullScreen" id="2WY-t0-NNd"/>
                         <segue destination="14s-V5-bUU" kind="presentation" identifier="toEditView" modalPresentationStyle="fullScreen" id="e0T-fq-UaM"/>
                     </connections>
                 </viewController>
@@ -198,7 +200,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iMn-HB-ph2"/>
+        <segue reference="o0T-jm-8KY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var editDate: String!
     
-    var indexPath: Int!
+    var editArrayNumber: Int!
     
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         memoArray = ["明るい朝", "異色な人たち"]
         
-        dateArray = ["　", "　"]
+        dateArray = ["", ""]
         
         //もし今までにデータ保存してたら
         ///初回保存はまだ保存されてないからこれ起動しないよ！ちなみに
@@ -70,10 +70,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //もし編集画面から戻ってきたら指定の配列の情報を変更し、保存
         if editMemo != nil {
-            memoArray[indexPath] = editMemo
+            memoArray[editArrayNumber] = editMemo
             userDefaults.set(memoArray, forKey: "memoArray")
             
-            dateArray[indexPath] = editDate
+            dateArray[editArrayNumber] = editDate
             userDefaults.setValue(dateArray, forKey: "dateArray")
         }
         
@@ -138,7 +138,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(self.currentMemoArray[indexPath.row])
             self.editMemo = self.currentMemoArray[indexPath.row]
             self.editDate = self.currentDateArray[indexPath.row]
-            self.indexPath = indexPath.row
+            self.editArrayNumber = indexPath.row
             self.toEdit()
             completionHandler(true)
             
@@ -169,11 +169,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let action = UIContextualAction(style: .destructive, title: "削除する") { (ctxAction, view, completionHandler) in
              //先にデータを削除しないと、エラーが発生します。
-            self.memoArray.remove(at: indexPath.row)
-            self.dateArray.remove(at: indexPath.row)
+            self.currentMemoArray.remove(at: indexPath.row)
+            self.currentDateArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.userDefaults.set(self.memoArray, forKey: "memoArray")
-            self.userDefaults.set(self.dateArray, forKey: "dateArray")
+            self.userDefaults.set(self.currentMemoArray, forKey: "memoArray")
+            self.userDefaults.set(self.currentDateArray, forKey: "dateArray")
             
             completionHandler(true)
         }
@@ -229,7 +229,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let EditViewController = segue.destination as! EditViewController
             EditViewController.editMemo = self.editMemo
             EditViewController.editDate = self.editDate
-            EditViewController.indexPath = self.indexPath
+            EditViewController.editArrayNumber = self.editArrayNumber
             
         }
     }

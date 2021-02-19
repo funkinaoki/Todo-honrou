@@ -15,7 +15,7 @@ class EditViewController: UIViewController {
     
     var editDate: String!
     
-    var indexPath: Int!
+    var editArrayNumber: Int!
 
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -52,7 +52,7 @@ class EditViewController: UIViewController {
         if segue.identifier == "toMainView" {
             let ViewController = segue.destination as! ViewController
             ViewController.editMemo = self.editMemo
-            ViewController.indexPath = self.indexPath
+            ViewController.editArrayNumber = self.editArrayNumber
             if editDate != nil{
                 ViewController.editDate = self.editDate
             }else{
