@@ -11,9 +11,19 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var textView: UITextField!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var dateButton: UIButton!
+    
+                    
+    @IBOutlet weak var stackShortConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stackLongConstraint: NSLayoutConstraint!
+    
     var addContext: String!
     
     var addDate: String!
+    
     
     let userDefaults = UserDefaults.standard
 
@@ -21,6 +31,10 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         textView.delegate = self
+        
+        textView.placeholder = "新規メモを入力"
+        
+        datePicker.isHidden = true
         
     }
     
@@ -48,7 +62,6 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func changeDate(_ sender: UIDatePicker) {
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         addDate = formatter.string(from: sender.date)
@@ -61,7 +74,55 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func cancel(_ sender: Any) {
+        
+    }
     
+    
+    @IBAction func date(_ sender: Any) {
+        //datePickerがなかったら
+        if datePicker.isHidden == true{
+            //datePickerを出して初期値を設定
+            datePicker.isHidden = false
+            addDate = DateUtils.stringFromDate(date: datePicker.date, format: "yyyy/MM/dd")
+            //ボタンはremovedateにする
+            dateButton.setTitle("Remove Date", for: .normal)
+            dateButton.setTitleColor(UIColor(red: 1, green: 59 / 255, blue: 48 / 255, alpha: 1) , for: .normal)
+            NSLayoutConstraint.deactivate([stackShortConstraint])
+            NSLayoutConstraint.activate([stackLongConstraint])
+
+        //datePickerがあったらこのボタンが押された時に
+        } else {
+            //datePickerをなくし、editDateには念のためnilを入れる
+            datePicker.isHidden = true
+            addDate = nil
+            //ボタンをaddDateにする
+            dateButton.setTitle("Add Date", for: .normal)
+            dateButton.setTitleColor(UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1), for: .normal)
+            
+            NSLayoutConstraint.deactivate([stackLongConstraint])
+            NSLayoutConstraint.activate([stackShortConstraint])
+            
+            
+        }
+    }
+    
+    class DateUtils {
+        class func dateFromString(string: String, format: String) -> Date {
+            let formatter: DateFormatter = DateFormatter()
+            formatter.calendar = Calendar(identifier: .gregorian)
+            formatter.dateFormat = format
+            return formatter.date(from: string)!
+        }
+        
+        class func stringFromDate(date: Date, format: String) -> String {
+            let formatter: DateFormatter = DateFormatter()
+            formatter.calendar = Calendar(identifier: .gregorian)
+            formatter.dateFormat = format
+            return formatter.string(from: date)
+        }
+
+    }
     
     
     

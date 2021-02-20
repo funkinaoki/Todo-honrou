@@ -107,47 +107,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Uv-VU-Ubj">
-                                <rect key="frame" x="69" y="296" width="276" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-aL-sWD">
-                                <rect key="frame" x="191.5" y="581" width="31" height="30"/>
-                                <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="save" destination="Gas-Uq-pah" eventType="touchUpInside" id="SZX-9Y-35j"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-qU-L2b">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                                <connections>
-                                    <action selector="changeDate:" destination="Gas-Uq-pah" eventType="valueChanged" id="WYN-59-RX5"/>
-                                </connections>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-AQ-3M7">
+                                <rect key="frame" x="66" y="586" width="282" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIF-Ja-0yC">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cencel:" destination="Gas-Uq-pah" eventType="touchUpInside" id="dbV-pS-94P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-aL-sWD">
+                                        <rect key="frame" x="109" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Add Date"/>
+                                        <connections>
+                                            <action selector="date:" destination="Gas-Uq-pah" eventType="touchUpInside" id="viO-3N-bSU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HG-bV-C0J">
+                                        <rect key="frame" x="218" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="save" destination="Gas-Uq-pah" eventType="touchUpInside" id="pta-zh-iwY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wua-pP-ZBO">
+                                <rect key="frame" x="47" y="323" width="320" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Uv-VU-Ubj">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-qU-L2b">
+                                        <rect key="frame" x="0.0" y="34" width="320" height="216"/>
+                                        <locale key="locale" localeIdentifier="ja_JP"/>
+                                        <connections>
+                                            <action selector="changeDate:" destination="Gas-Uq-pah" eventType="valueChanged" id="WYN-59-RX5"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ccT-ah-3Bk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kFB-aL-sWD" firstAttribute="top" secondItem="ev1-qU-L2b" secondAttribute="bottom" constant="25" id="0qV-XM-c8l"/>
-                            <constraint firstItem="0Uv-VU-Ubj" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="Pe2-sa-gq5"/>
-                            <constraint firstItem="kFB-aL-sWD" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="S6t-AD-Iut"/>
-                            <constraint firstAttribute="width" secondItem="0Uv-VU-Ubj" secondAttribute="width" multiplier="1.5" id="Szg-ov-5Yn"/>
-                            <constraint firstItem="ev1-qU-L2b" firstAttribute="centerY" secondItem="0AT-Z0-0S7" secondAttribute="centerY" id="Zkd-uM-EIe"/>
-                            <constraint firstItem="ev1-qU-L2b" firstAttribute="top" secondItem="0Uv-VU-Ubj" secondAttribute="bottom" constant="10" id="ffj-0H-cVH"/>
-                            <constraint firstItem="ev1-qU-L2b" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="imY-3X-aap"/>
+                            <constraint firstItem="wua-pP-ZBO" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="462-Vw-uVH"/>
+                            <constraint firstItem="wua-pP-ZBO" firstAttribute="centerY" secondItem="0AT-Z0-0S7" secondAttribute="centerY" id="9mh-lZ-z86"/>
+                            <constraint firstItem="FLk-AQ-3M7" firstAttribute="width" secondItem="0AT-Z0-0S7" secondAttribute="width" multiplier="0.68" id="HZm-tx-RlO"/>
+                            <constraint firstItem="FLk-AQ-3M7" firstAttribute="width" secondItem="0AT-Z0-0S7" secondAttribute="width" multiplier="0.9" id="Tc8-zE-x4W"/>
+                            <constraint firstItem="FLk-AQ-3M7" firstAttribute="centerX" secondItem="0AT-Z0-0S7" secondAttribute="centerX" id="b1p-sc-fyI"/>
+                            <constraint firstItem="FLk-AQ-3M7" firstAttribute="top" secondItem="wua-pP-ZBO" secondAttribute="bottom" constant="13" id="thi-bU-Rd5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Tc8-zE-x4W"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="fCg-Vc-9f8"/>
                     <connections>
+                        <outlet property="dateButton" destination="kFB-aL-sWD" id="H4I-7a-LST"/>
+                        <outlet property="datePicker" destination="ev1-qU-L2b" id="X5O-aN-1FZ"/>
+                        <outlet property="stackLongConstraint" destination="Tc8-zE-x4W" id="FdE-8d-5yu"/>
+                        <outlet property="stackShortConstraint" destination="HZm-tx-RlO" id="Emy-if-Gj7"/>
                         <outlet property="textView" destination="0Uv-VU-Ubj" id="Rih-Iy-nRP"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="o0T-jm-8KY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yB-Df-5gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="-254"/>
+            <point key="canvasLocation" x="1673.913043478261" y="-254.46428571428569"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="ZHO-fy-nZd">
@@ -157,42 +191,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erf-BU-vgH">
-                                <rect key="frame" x="69" y="296" width="276" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-lq-l0Y">
-                                <rect key="frame" x="191.5" y="581" width="31" height="30"/>
-                                <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="save:" destination="14s-V5-bUU" eventType="touchUpInside" id="Vsr-Gk-30h"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-jw-bsz">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                                <connections>
-                                    <action selector="changeDate:" destination="14s-V5-bUU" eventType="valueChanged" id="vg2-WQ-j6l"/>
-                                </connections>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="2Y2-MH-Cge">
+                                <rect key="frame" x="20.5" y="586" width="373" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebP-Ux-pqs">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancel:" destination="14s-V5-bUU" eventType="touchUpInside" id="DGG-iu-J4X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqc-c5-UGn">
+                                        <rect key="frame" x="139.5" y="0.0" width="94" height="30"/>
+                                        <state key="normal" title="Add Date"/>
+                                        <connections>
+                                            <action selector="date:" destination="Gas-Uq-pah" eventType="touchUpInside" id="Zam-Ik-LUi"/>
+                                            <action selector="date:" destination="14s-V5-bUU" eventType="touchUpInside" id="drv-EL-s1j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-rL-Ohx">
+                                        <rect key="frame" x="278.5" y="0.0" width="94.5" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="save" destination="Gas-Uq-pah" eventType="touchUpInside" id="IDu-O9-0cE"/>
+                                            <action selector="save:" destination="14s-V5-bUU" eventType="touchUpInside" id="bwp-ND-b8Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-tr-UII">
+                                <rect key="frame" x="47" y="323" width="320" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iT5-hN-6fD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="pjE-17-LFh">
+                                        <rect key="frame" x="0.0" y="34" width="320" height="216"/>
+                                        <locale key="locale" localeIdentifier="ja_JP"/>
+                                        <connections>
+                                            <action selector="changeDate:" destination="Gas-Uq-pah" eventType="valueChanged" id="XHK-AM-CmO"/>
+                                            <action selector="changeDate:" destination="14s-V5-bUU" eventType="valueChanged" id="hpp-1I-o7b"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XOc-2c-s3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EBh-jw-bsz" firstAttribute="centerY" secondItem="dva-Qk-qIb" secondAttribute="centerY" id="8wE-fL-y6H"/>
-                            <constraint firstItem="erf-BU-vgH" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="LZ3-rB-ntL"/>
-                            <constraint firstItem="sUP-lq-l0Y" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="er6-60-yEP"/>
-                            <constraint firstAttribute="width" secondItem="erf-BU-vgH" secondAttribute="width" multiplier="1.5" id="ggm-cv-fvr"/>
-                            <constraint firstItem="EBh-jw-bsz" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="qoq-59-Q4n"/>
-                            <constraint firstItem="EBh-jw-bsz" firstAttribute="top" secondItem="erf-BU-vgH" secondAttribute="bottom" constant="10" id="xgH-5v-CIE"/>
-                            <constraint firstItem="sUP-lq-l0Y" firstAttribute="top" secondItem="EBh-jw-bsz" secondAttribute="bottom" constant="25" id="zg4-Iz-GAU"/>
+                            <constraint firstItem="2Y2-MH-Cge" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="3et-Lv-LM2"/>
+                            <constraint firstItem="2Y2-MH-Cge" firstAttribute="top" secondItem="K6c-tr-UII" secondAttribute="bottom" constant="13" id="Cxe-tr-Vf7"/>
+                            <constraint firstItem="K6c-tr-UII" firstAttribute="centerY" secondItem="dva-Qk-qIb" secondAttribute="centerY" id="O0M-3Z-49s"/>
+                            <constraint firstItem="2Y2-MH-Cge" firstAttribute="width" secondItem="dva-Qk-qIb" secondAttribute="width" multiplier="0.9" id="O6d-8Q-Vem"/>
+                            <constraint firstItem="K6c-tr-UII" firstAttribute="centerX" secondItem="dva-Qk-qIb" secondAttribute="centerX" id="YbW-gD-Gkk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x3J-PH-y0H"/>
                     <connections>
-                        <outlet property="datePicker" destination="EBh-jw-bsz" id="pWM-bQ-uxk"/>
-                        <outlet property="textView" destination="erf-BU-vgH" id="O1I-uU-JzQ"/>
+                        <outlet property="dateButton" destination="Uqc-c5-UGn" id="lND-GS-rSU"/>
+                        <outlet property="datePicker" destination="pjE-17-LFh" id="4aC-9m-enQ"/>
+                        <outlet property="textView" destination="iT5-hN-6fD" id="ghF-Uu-W6j"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="iMn-HB-ph2"/>
                     </connections>
                 </viewController>
@@ -207,6 +269,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

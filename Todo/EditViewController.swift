@@ -17,6 +17,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     var editArrayNumber: Int!
 
+    @IBOutlet weak var dateButton: UIButton!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -26,13 +27,20 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         textView.delegate = self
         
         textView.text = editMemo
-        print(editMemo!)
+    
         
-        //もし時間が設定されていたら時刻を表示する
+        //もし日にちが設定されていたら日にちを表示する&addDateをdeleteDateにする
         if editDate != ""{
-        let date = DateUtils.dateFromString(string: editDate, format: "yyyy/MM/dd")
-        print(date)
-        datePicker.date = date
+            //元々設定したdateを表示
+            let date = DateUtils.dateFromString(string: editDate, format: "yyyy/MM/dd")
+            print(date)
+            datePicker.date = date
+            //addDateをremoveDate
+            dateButton.setTitle("Remove Date", for: .normal)
+            dateButton.setTitleColor(UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1), for: .normal)
+        } else {
+            //date自体を非表示
+            datePicker.isHidden = true
         }
         
     }
@@ -47,9 +55,34 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         editDate = DateUtils.stringFromDate(date: sender.date, format: "yyyy/MM/dd")
     }
     
+    @IBAction func date(_ sender: Any) {
+        //datePickerがなかったら
+        if datePicker.isHidden == true{
+            //datePickerを出して初期値を設定
+            datePicker.isHidden = false
+            editDate = DateUtils.stringFromDate(date: datePicker.date, format: "yyyy/MM/dd")
+            //ボタンはremovedateにする
+            dateButton.setTitle("Remove Date", for: .normal)
+            dateButton.setTitleColor(UIColor(red: 1, green: 59 / 255, blue: 48 / 255, alpha: 1) , for: .normal)
+        //datePickerがあったらこのボタンが押された時に
+        } else {
+            //datePickerをなくし、editDateには念のためnilを入れる
+            datePicker.isHidden = true
+            editDate = nil
+            //ボタンをaddDateにする
+            dateButton.setTitle("Add Date", for: .normal)
+            dateButton.setTitleColor(UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1), for: .normal)
+        }
+    }
+    
+    
+    @IBAction func cancel(_ sender: Any) {
+    }
+    
     func toMain() {
         performSegue(withIdentifier: "toMainView", sender: nil)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMainView" {

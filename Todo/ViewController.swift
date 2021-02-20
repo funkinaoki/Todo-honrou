@@ -39,6 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        UserDefaults.standard.removeAll()
+        
         table.dataSource = self
         
         table.delegate = self
@@ -256,8 +258,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
     }
+    
+    
 
 
+}
+extension UserDefaults {
+    func removeAll() {
+        dictionaryRepresentation().forEach { removeObject(forKey: $0.key) }
+    }
 }
 
 
