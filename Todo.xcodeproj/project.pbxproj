@@ -16,6 +16,7 @@
 		CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01937B25DE98F200CD164F /* MemoViewController.swift */; };
 		CC01937F25DFC13700CD164F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01937E25DFC13700CD164F /* EditViewController.swift */; };
 		CCBF215C25E26195007DE9EA /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF215B25E26195007DE9EA /* DateUtils.swift */; };
+		CCBF216325E262E9007DE9EA /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF216225E262E9007DE9EA /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CC01937B25DE98F200CD164F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		CC01937E25DFC13700CD164F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		CCBF215B25E26195007DE9EA /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		CCBF216225E262E9007DE9EA /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				CC01937B25DE98F200CD164F /* MemoViewController.swift */,
 				CC01937E25DFC13700CD164F /* EditViewController.swift */,
 				CCBF215B25E26195007DE9EA /* DateUtils.swift */,
+				CCBF216225E262E9007DE9EA /* Todo.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBF216325E262E9007DE9EA /* Todo.swift in Sources */,
 				CC01937F25DFC13700CD164F /* EditViewController.swift in Sources */,
 				CCBF215C25E26195007DE9EA /* DateUtils.swift in Sources */,
 				CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */,

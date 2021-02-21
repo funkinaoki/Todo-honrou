@@ -14,8 +14,8 @@
             filePath = "Todo/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,118 +30,10 @@
             filePath = "Todo/MemoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "date(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Todo/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - d1360c8e2b2d3d7b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.editMemo.getter : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - 48169e04275dad07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.editMemo.setter : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - 4e669c2bf9b06e90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.editMemo.modify : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - 5785ec0f1b332b25"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.editMemo.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "8">
-               </Location>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - 42df1dc361214401"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Todo.ViewController"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "1324">
-               </Location>
-               <Location
-                  uuid = "71AD39E6-9B06-4A1D-BDC6-287498D739DF - fb492d987f05240e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todo.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Todo.ViewController&gt;"
-                  moduleName = "Todo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hachimannaoki/Downloads/lifeistech/Todo/Todo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "1300">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

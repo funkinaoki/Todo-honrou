@@ -24,6 +24,8 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
     
     var addDate: String!
     
+    var todoArray: [Todo] = []
+    
     
     let userDefaults = UserDefaults.standard
 
@@ -36,7 +38,31 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
         
         datePicker.isHidden = true
         
+        //input
+        for x in 0..<userDefaults.array(forKey: "memo")!.count {
+                todoArray[x].memo = userDefaults.array(forKey: "memo")?[x] as? String
+                todoArray[x].date = userDefaults.array(forKey: "date")?[x] as? String
+                todoArray[x].check = userDefaults.array(forKey: "check")?[x] as? Bool
+        }
+        
     }
+    
+    @IBAction func save() {
+        addContext = textView.text
+        todoArray.append(Todo(memo:"\(addContext)", date: "\(addDate)", check: false))
+        userDefaults.set(todoArray, forKey: "todoArray")
+        for x in 0..<todoArray.count {
+            tmemoArray.append(todoArray[x].memo)
+            tdateArray.append(todoArray[x].date)
+            tcheckArray.append(todoArray[x].check)
+        }
+        userDefaults.set(tmemoArray, forKey: "memo")
+        userDefaults.set(tdateArray, forKey: "date")
+        userDefaults.set(tcheckArray, forKey: "check")
+        toMain()
+    }
+    
+    
     
     func toMain() {
         performSegue(withIdentifier: "toMainView", sender: nil)
@@ -52,12 +78,6 @@ class MemoViewController: UIViewController, UITextFieldDelegate {
                 ViewController.addDate = ""
             }
         }
-    }
-    
-    
-    @IBAction func save() {
-        addContext = textView.text
-        toMain()
     }
     
     
