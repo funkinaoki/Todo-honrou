@@ -15,6 +15,7 @@
 		CC01937325DE968C00CD164F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC01937125DE968C00CD164F /* LaunchScreen.storyboard */; };
 		CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01937B25DE98F200CD164F /* MemoViewController.swift */; };
 		CC01937F25DFC13700CD164F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01937E25DFC13700CD164F /* EditViewController.swift */; };
+		CCBF215C25E26195007DE9EA /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF215B25E26195007DE9EA /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CC01937425DE968C00CD164F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC01937B25DE98F200CD164F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		CC01937E25DFC13700CD164F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		CCBF215B25E26195007DE9EA /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				CC01937425DE968C00CD164F /* Info.plist */,
 				CC01937B25DE98F200CD164F /* MemoViewController.swift */,
 				CC01937E25DFC13700CD164F /* EditViewController.swift */,
+				CCBF215B25E26195007DE9EA /* DateUtils.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC01937F25DFC13700CD164F /* EditViewController.swift in Sources */,
+				CCBF215C25E26195007DE9EA /* DateUtils.swift in Sources */,
 				CC01937C25DE98F200CD164F /* MemoViewController.swift in Sources */,
 				CC01936B25DE968A00CD164F /* ViewController.swift in Sources */,
 				CC01936725DE968A00CD164F /* AppDelegate.swift in Sources */,

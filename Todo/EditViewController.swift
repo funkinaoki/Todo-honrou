@@ -37,7 +37,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             datePicker.date = date
             //addDateをremoveDate
             dateButton.setTitle("Remove Date", for: .normal)
-            dateButton.setTitleColor(UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1), for: .normal)
+            dateButton.setTitleColor(UIColor(red: 1, green: 59 / 255, blue: 48 / 255, alpha: 1) , for: .normal)
         } else {
             //date自体を非表示
             datePicker.isHidden = true
@@ -77,6 +77,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func toMain() {
@@ -95,23 +96,6 @@ class EditViewController: UIViewController, UITextFieldDelegate {
                 ViewController.editDate = ""
             }
         }
-    }
-    
-    class DateUtils {
-        class func dateFromString(string: String, format: String) -> Date {
-            let formatter: DateFormatter = DateFormatter()
-            formatter.calendar = Calendar(identifier: .gregorian)
-            formatter.dateFormat = format
-            return formatter.date(from: string)!
-        }
-        
-        class func stringFromDate(date: Date, format: String) -> String {
-            let formatter: DateFormatter = DateFormatter()
-            formatter.calendar = Calendar(identifier: .gregorian)
-            formatter.dateFormat = format
-            return formatter.string(from: date)
-        }
-
     }
     
     //キーボード

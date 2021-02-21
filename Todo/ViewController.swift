@@ -23,6 +23,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var currentDateArray = [String]()
     
+    var checkArray = [Bool]()
+    
+    var currentCheckArray = [Bool]()
+    
     let userDefaults = UserDefaults.standard
     
     var addContext: String!
@@ -39,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        UserDefaults.standard.removeAll()
+//      UserDefaults.standard.removeAll()
         
         table.dataSource = self
         
@@ -51,12 +55,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         dateArray = ["", ""]
         
+        checkArray = [false, true]
+        
         //もし今までにデータ保存してたら
         ///初回保存はまだ保存されてないからこれ起動しないよ！ちなみに
         if userDefaults.object(forKey: "memoArray") != nil {
             //memoArrayにuserDefualtsを打ち込む
             memoArray = userDefaults.array(forKey: "memoArray") as! [String]
             dateArray = userDefaults.array(forKey: "dateArray") as! [String]
+            checkArray = userDefaults.array(forKey: "checkArray") as! [Bool]
             print("おけ")
         }
         
@@ -69,6 +76,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             dateArray.append(addDate)
             userDefaults.setValue(dateArray, forKey: "dateArray")
             
+            checkArray.append(false)
+            userDefaults.setValue(checkArray, forKey: "checkArray")
             
         }
         
@@ -82,8 +91,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             userDefaults.setValue(dateArray, forKey: "dateArray")
         }
         
+        
+        
         currentMemoArray = memoArray
         currentDateArray = dateArray
+        currentCheckArray = checkArray
+//        print(currentMemoArray)
+//        print(currentCheckArray)
         
     }
     
@@ -115,8 +129,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell?.textLabel?.text = currentMemoArray[indexPath.row]
         cell?.detailTextLabel?.text = currentDateArray[indexPath.row]
+    
+        if currentCheckArray[indexPath.row] == true {
+            cell?.accessoryType = .checkmark
+        } else {
+            cell?.accessoryType = .none
+        }
         
         return cell!
+    }
+    
+    // セルが選択された時に呼び出される
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at:indexPath)
+        
+        
+        //チェックが入ってたら無くす
+        if cell?.accessoryType == .checkmark{
+            cell?.accessoryType = .none
+            checkArray[indexPath.row] = false
+            userDefaults.setValue(checkArray, forKey: "checkArray")
+
+        } else {
+            cell?.accessoryType = .checkmark
+            checkArray[indexPath.row] = true
+            userDefaults.setValue(checkArray, forKey: "checkArray")
+        }
+        
+        //灰色を無くすために選択を解除する
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //editingstyleおよびスワイプにおける削除機能の追加
@@ -229,11 +270,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if searchText != "" {
             currentMemoArray = memoArray.filter { item in
                 return item.contains(searchText)
+                    
             } as Array
         } else {
             //渡された文字列が空の場合は全てを表示
             currentMemoArray = memoArray
             currentDateArray = dateArray
+            currentCheckArray = checkArray
         }
         //tableViewを再読み込みする
         table.reloadData()
@@ -258,9 +301,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
     }
-    
-    
-
 
 }
 extension UserDefaults {
